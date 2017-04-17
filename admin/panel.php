@@ -6,26 +6,26 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 	<script type="text/javascript" src="https://www.appelsiini.net/projects/chained/jquery.chained.js?v=0.9.10"></script>
-		<script type="text/javascript">
-			$(document).ready(function() {
-	$("#series").chainedTo("#mark"); 
-    var maximum_secenek_sayisi      = 10; 
-    var wrapper         = $(".input_fields_wrap"); 
-    var buton_ekle      = $(".buton_kimlik_alani"); //Add button ID
-   
-    var x = 1; 
-    $(buton_ekle).click(function(e){ 
-        e.preventDefault();
-        if(x < maximum_secenek_sayisi){
-            x++; 
-            $(wrapper).append('<div><hr><input type="text" class="form-control" style="border-radius:0px;margin-bottom: 10px;color: black" name="secenek[]" placeholder="Lütfen Soruya Hitaben Yanıtı Yazınız."/><a href="#" class="alani_sil btn btn-sm btn-danger" style="border-radius:0px">Sil</a></div>'); 
-        }
-    });
-   
-    $(wrapper).on("click",".alani_sil", function(e){ 
-        e.preventDefault(); $(this).parent('div').remove(); x--;
-    })
-});
+	<script type="text/javascript">
+		    $(document).ready(function() {
+		    $("#series").chainedTo("#mark"); 
+		    var maximum_secenek_sayisi      = 10; 
+		    var wrapper         = $(".input_fields_wrap"); 
+		    var buton_ekle      = $(".buton_kimlik_alani");
+
+		    var x = 1; 
+		    $(buton_ekle).click(function(e){ 
+			e.preventDefault();
+			if(x < maximum_secenek_sayisi){
+			    x++; 
+			    $(wrapper).append('<div><hr><input type="text" class="form-control" style="border-radius:0px;margin-bottom: 10px;color: black" name="secenek[]" placeholder="Lütfen Soruya Hitaben Yanıtı Yazınız."/><a href="#" class="alani_sil btn btn-sm btn-danger" style="border-radius:0px">Sil</a></div>'); 
+			}
+		    });
+
+		    $(wrapper).on("click",".alani_sil", function(e){ 
+			e.preventDefault(); $(this).parent('div').remove(); x--;
+		    })
+		});
 		</script>
 	</head>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
